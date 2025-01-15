@@ -1,6 +1,28 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import Layout from "../components/Layout";
+import Loading from "../components/Loading";
+import "../styles/globals.css";
+import { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }: AppProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
+
+export default MyApp;

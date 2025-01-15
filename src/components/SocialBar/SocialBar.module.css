@@ -1,0 +1,126 @@
+.socialBar {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.socialLink:hover {
+  color: white;
+  transform: translateX(-5px);
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.label {
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  background: var(--card);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.socialLink:hover .label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .socialLink {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+[data-theme="dark"] .socialLink:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+[data-theme="dark"] .label {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .socialBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.75rem;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+  }
+
+  .socialLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .socialLink:hover {
+    transform: translateY(-5px);
+  }
+
+  .label {
+    display: none;
+  }
+
+  /* Dark mode mobile specific */
+  [data-theme="dark"] .socialBar {
+    background: rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .socialBar {
+    display: none;
+  }
+} 

@@ -1,0 +1,33 @@
+.blog {
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.post {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--surface);
+  transition: transform 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.post time {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+} 
