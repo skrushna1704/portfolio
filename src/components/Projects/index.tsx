@@ -1,34 +1,36 @@
-import Image from 'next/image';
-import styles from './Projects.module.css';
-import Ecomm from '../../../public/images/ecomm.png'
-import Weather from '../../../public/images/weather.png'
-import Todo from '../../../public/images/todo.png'
+import Image from "next/image";
+import styles from "./Projects.module.css";
+import Ecomm from "../../../public/images/ecomm.png";
+import Weather from "../../../public/images/weather.png";
+import Todo from "../../../public/images/todo.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Bazzar',
-      description: 'A full-stack web application built with Next.js and MongoDB (E-Bazzar)',
+      title: "E-Bazzar",
+      description:
+        "A full-stack web application built with Next.js and MongoDB (E-Bazzar)",
       image: Ecomm,
-      technologies: ['Next.js', 'MongoDB', 'Chakra UI','Express JS'],
-      liveUrl: 'https://e-bazzar.vercel.app',
-      githubUrl: 'https://github.com/yourusername/e-bazzar',
+      technologies: ["Next.js", "MongoDB", "Chakra UI", "Express JS"],
+      liveUrl: "https://e-bazzar.vercel.app",
+      githubUrl: "https://github.com/yourusername/e-bazzar",
     },
     {
-      title: 'Weather App',
-      description: 'A Frontend app Showing weather forcast',
+      title: "Backend API",
+      description:
+        "A Backend app Creating API's Like login, logout, Fetch Product",
       image: Weather,
-      technologies: ['Next.js', 'Tailwind CSS'],
-      liveUrl: 'https://weather-app-next.vercel.app',
-      githubUrl: 'https://github.com/yourusername/weather-app',
+      technologies: ["Express Js", "MpngoDb"],
+      liveUrl: "https://github.com/skrushna1704/backend",
+      githubUrl: "https://github.com/skrushna1704/backend",
     },
     {
       title: "Todo App",
-      description: 'A Frontend app For todo',
+      description: "A Frontend app For todo",
       image: Todo,
-      technologies: ['React', 'Tailwind CSS'],
-      liveUrl: 'https://todo-app-react.vercel.app',
-      githubUrl: 'https://github.com/yourusername/todo-app',
+      technologies: ["HTML", "CSS", "Javascript"],
+      liveUrl: "https://todokrushna.vercel.app/",
+      githubUrl: "https://github.com/skrushna1704/Todo2025",
     },
   ];
 
@@ -59,10 +61,20 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className={styles.links}>
-                  <a href={project.liveUrl} className="button button-primary" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.liveUrl}
+                    className="button button-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Live Demo
                   </a>
-                  <a href={project.githubUrl} className="button button-outline" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.githubUrl}
+                    className="button button-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     GitHub
                   </a>
                 </div>
@@ -75,4 +87,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
